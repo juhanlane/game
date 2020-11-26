@@ -6,11 +6,17 @@ public class World {
     private static int height;
     private static int width;
 
-    private List<Player> characters;
+    private List<WorldCharacter> characters;
 
+    public static int getHeight() {
+        return height;
+    }
 
+    public static int getWidth() {
+        return width;
+    }
 
-    public void setCharacters(List<Player> characters) {
+    public void setCharacters(List<WorldCharacter> characters) {
         this.characters = characters;
     }
 
@@ -32,7 +38,7 @@ public class World {
                 } else {
                     symbol = " ";
                 }
-                for (Player p: characters ) {
+                for (WorldCharacter p: characters ) {
                     if (p.getyCoord() == y && p.getxCoord() == x) {
                         symbol = p.getSymbol();
                     }
